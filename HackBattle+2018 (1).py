@@ -93,3 +93,15 @@ print("accuracy:   %0.3f" % score)
 cm = confusion_matrix(y_test, pred, labels=['FAKE', 'REAL'])
 plot_confusion_matrix(cm, classes=['FAKE', 'REAL'])
 
+
+# In[8]:
+
+
+clf = MultinomialNB() 
+clf.fit(count_train, y_train)
+pred = clf.predict(count_test)
+score = accuracy_score(y_test, pred)
+print("accuracy:   %0.3f" % score)
+cm = confusion_matrix(y_test, pred, labels=['FAKE', 'REAL'])
+plot_confusion_matrix(cm, classes=['FAKE', 'REAL'])
+
