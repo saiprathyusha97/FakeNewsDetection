@@ -105,3 +105,16 @@ print("accuracy:   %0.3f" % score)
 cm = confusion_matrix(y_test, pred, labels=['FAKE', 'REAL'])
 plot_confusion_matrix(cm, classes=['FAKE', 'REAL'])
 
+
+# In[9]:
+
+
+from sklearn.linear_model import PassiveAggressiveClassifier
+linear_clf = PassiveAggressiveClassifier(max_iter=50)
+linear_clf.fit(tfidf_train, y_train)
+pred = linear_clf.predict(tfidf_test)
+score = accuracy_score(y_test, pred)
+print("accuracy:   %0.3f" % score)
+cm = confusion_matrix(y_test, pred, labels=['FAKE', 'REAL'])
+plot_confusion_matrix(cm, classes=['FAKE', 'REAL'])
+
