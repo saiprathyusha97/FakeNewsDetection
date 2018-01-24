@@ -32,3 +32,13 @@ tfidf_vectorizer = TfidfVectorizer(stop_words='english', max_df=0.7)
 tfidf_train = tfidf_vectorizer.fit_transform(X_train) 
 tfidf_test = tfidf_vectorizer.transform(X_test)
 
+
+# In[5]:
+
+
+count_df = pd.DataFrame(count_train.A, columns=count_vectorizer.get_feature_names())
+tfidf_df = pd.DataFrame(tfidf_train.A, columns=tfidf_vectorizer.get_feature_names())
+difference = set(count_df.columns) - set(tfidf_df.columns)
+print(count_df.equals(tfidf_df))
+count_df.head()
+
