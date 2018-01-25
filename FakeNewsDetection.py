@@ -3,7 +3,6 @@
 
 # In[ ]:
 
-
 test_string = input().split('\n')
 
 
